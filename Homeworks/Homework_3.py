@@ -1,5 +1,6 @@
 birth_month = int(input("Please, enter your month of birth (as a number from 1 to 12): "))
 birth_date = int(input("Please, enter your date of birth: "))
+
 if birth_month == 1 and 20 <= birth_date <= 31 or birth_month == 2 and 1 <= birth_date <= 18:
     print("You are Aquarius!")
 elif birth_month == 2 and 19 <= birth_date <= 29 or birth_month == 3 and 1 <= birth_date <= 20:
