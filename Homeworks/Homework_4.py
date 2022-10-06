@@ -2,6 +2,7 @@ start = int(input('Please, enter the lower limit for prime numbers search: '))
 stop = int(input('Please, enter the upper limit for prime numbers search: '))
 
 prime_numbers_counter = 0
+print("Here the prime numbers in the specified range:")
 
 while start <= stop:
     delimiters_counter = 0
