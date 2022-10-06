@@ -5,16 +5,17 @@ prime_numbers_counter = 0
 print("Here the prime numbers in the specified range:")
 
 while start <= stop:
-    delimiters_counter = 0
-    number_counter = 1
+    is_prime = True
+    number_counter = 2
 
-    while number_counter <= start:
+    while number_counter < start:
 
         if start % number_counter == 0:
-            delimiters_counter += 1
+            is_prime = False
+            break
         number_counter += 1
 
-    if delimiters_counter <= 2:
+    if is_prime:
         print(start)
         prime_numbers_counter += 1
 
