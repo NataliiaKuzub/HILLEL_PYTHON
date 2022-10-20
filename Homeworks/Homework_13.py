@@ -27,12 +27,16 @@ morse_dict = {
     '--..': 'z'
 }
 
-text = input('Please, enter the signal: ').split('    ')
-text = [word.split(' ') for word in text]
+morse_list = input('Please, enter the signal: ').split('    ')
+morse_list = [i.split(' ') for i in morse_list]
+english_list = []
 
-for word_position, word in enumerate(text):
-    for letter_position, letter in enumerate(word):
-        word[letter_position] = morse_dict.get(letter, '~')
-    text[word_position] = ''.join(word)
-print(f"Corresponding english text: {' '.join(text)}")
+for i in morse_list:
+    word = ""
+    for letter in i:
+        word += morse_dict.get(letter, '~')
+    english_list.append(word)
+
+print(f"Corresponding english text: {' '.join(english_list)}")
+
 
