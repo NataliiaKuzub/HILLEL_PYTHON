@@ -1,10 +1,8 @@
 def is_prime(number):
-    check_prime = True
     for i in range(2, number):
         if number % i == 0:
-            check_prime = False
-            break
-    return check_prime
+            return False
+    return True
 
 
 limits = input("Please, enter lower and upper limits separated by coma: ")
