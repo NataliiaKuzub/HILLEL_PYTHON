@@ -1,11 +1,12 @@
-import random
+from random import randrange
 
-the_number = random.randrange(0, 100)
+the_number = randrange(0, 100)
 #  print(the_number)
 
 print("Guess the number from 0 to 100: ")
 guess = int(input("Please, enter the number: "))
 n = 1
+
 while guess != the_number:
     n += 1
     if guess > the_number:
