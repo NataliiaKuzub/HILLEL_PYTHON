@@ -10,16 +10,12 @@ def data_list():
     return input("Please, enter car data (model/speed/capacity/power): ").split("/")
 
 
-def get_item_power(diction):
-    return int(diction["engine"]["power"])
-
-
 cars_data = []
 k = data_list()
 while k != ['']:
     cars_data.append(dict_constructor(k[0], k[1], k[2], k[3]))
     k = data_list()
 
-for car in sorted(cars_data, key=get_item_power, reverse=True):
+for car in sorted(cars_data, key=lambda i: int(i["engine"]["power"]), reverse=True):
     print(car)
 
