@@ -9,7 +9,7 @@ def rotate_matrix(source_matrix):
 matrix = []
 
 for n in range(1, 4):
-    element = [int(i) for i in input(f'Please, data for the row #{n}: ').split(',')]
+    element = [int(i) for i in input(f'Please, enter data for the row #{n}: ').split(',')]
     if len(element) == 4:
         matrix.append(element)
     else:
