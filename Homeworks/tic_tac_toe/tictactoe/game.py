@@ -32,21 +32,35 @@ def has_full_row(matrix, element):
 
     # horizontals
     for row in matrix:
-        if all([cell == element for cell in row]):
-            return True
+        for i in range(0, 5):
+            if all([cell == element for cell in row[i:i + 5]]):
+                return True
 
     # verticals
     for col_index in range(size):
-        if all([row[col_index] == element for row in matrix]):
-            return True
+        for i in range(0, 5):
+            if all([row[col_index] == element for row in matrix[i:i+5]]):
+                return True
 
     # \ diagonal
-    if all([matrix[r][r] == element for r in range(size)]):
-        return True
+    count = 0
+    while count < 5:
+        for i in range(0, 5 - count):
+            if all([matrix[r + count][r] == element for r in range(i, i + 5)]):
+                return True
+            elif all([matrix[r][r + count] == element for r in range(i, i + 5)]):
+                return True
+        count += 1
 
     # / diagonal
-    if all([matrix[r][size - r - 1] == element for r in range(size)]):
-        return True
+    count = 0
+    while count < 5:
+        for i in range(0, 5 - count):
+            if all([matrix[r][size - r - 1 - count] == element for r in range(i, i + 5)]):
+                return True
+            elif all([matrix[r + count][size - r - 1] == element for r in range(i, i + 5)]):
+                return True
+        count += 1
 
     return False
 
