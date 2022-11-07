@@ -1,12 +1,12 @@
-import tictactoe as ttt
+from tictactoe import parse_coordinates, is_game_over, has_full_row, create_matrix, print_matrix
 
 
 CROSS = 'x'
 ZERO = 'o'
 EMPTY = '.'
 
-ROW_HEADERS = '123456789'
-COL_HEADERS = 'abcdefghi'
+ROW_HEADERS = '123'
+COL_HEADERS = 'abc'
 
 sides = {
     CROSS: "Хрестики",
@@ -15,11 +15,11 @@ sides = {
 
 next_turn = CROSS
 
-board = ttt.create_matrix(9, 9, value='.')
+board = create_matrix(3, 3, value='.')
 
 while True:
     print("Ігрове поле:")
-    ttt.print_matrix(
+    print_matrix(
         board,
         row_headers=ROW_HEADERS,
         col_headers=COL_HEADERS,
@@ -27,10 +27,10 @@ while True:
     )
     print('------------')
 
-    if ttt.is_game_over(board, cross=CROSS, zero=ZERO, empty=EMPTY):
-        if ttt.has_full_row(board, CROSS):
+    if is_game_over(board, cross=CROSS, zero=ZERO, empty=EMPTY):
+        if has_full_row(board, CROSS):
             print("Хрестики виграли!")
-        elif ttt.has_full_row(board, ZERO):
+        elif has_full_row(board, ZERO):
             print("Нолики виграли!")
         else:
             print("Нічия!")
@@ -41,7 +41,7 @@ while True:
     print(f"{sides[next_turn]}, ваш хід!")
 
     while True:
-        pos = ttt.parse_coordinates(
+        pos = parse_coordinates(
             input("Введіть координати: "),
             row_headers=ROW_HEADERS,
             col_headers=COL_HEADERS,
