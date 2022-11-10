@@ -13,7 +13,7 @@ week_days = {
 d = input("Please, enter the date in the format 'Year-Month-Day': ")
 
 # Printing day of the week in Ukrainian
-print(week_days[datetime.strptime(d, '%Y-%m-%d').weekday()])
+print(f"День тижня: {week_days[datetime.strptime(d, '%Y-%m-%d').weekday()]}")
 
 # Printing day of the week in English
-print(datetime.strptime(d, '%Y-%m-%d').strftime('%A'))
+print(f"The day of the week: {datetime.strptime(d, '%Y-%m-%d').strftime('%A')}")
