@@ -50,5 +50,4 @@ if not day_planning.is_empty:
 else:
     print(f"You've done all the things for today, good job!")
 
-if day_planning.is_empty:
-    print('Have a nice evening!')
+print('Have a nice evening!')
